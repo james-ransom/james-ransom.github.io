@@ -1,0 +1,552 @@
+[/Users/ransom/projects/guides][git:main]$ cat php-ruby-python.html 
+<html>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 8px;
+        border: 1px solid #ddd;
+        font-family: Arial, sans-serif;
+    }
+
+    th{
+        background-color: yellow;
+        color: black;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+<table>
+<tr>
+<th>
+	statement 
+</th>
+<th>
+	php
+</th>
+<th>
+	ruby
+</th>
+<th>
+	python
+</th>
+</tr>
+
+
+<tr>
+    <td>Lowercase String</td>
+    <td>strtolower($string)</td>
+    <td>$string.downcase</td>
+    <td>string.lower()</td>
+</tr>
+<tr>
+    <td>Check if Set</td>
+    <td>isset($variable)</td>
+    <td>!variable.nil?</td>
+    <td>variable is not None</td>
+</tr>
+<tr>
+    <td>If Statement</td>
+    <td>if ($condition) { }</td>
+    <td>if condition then end</td>
+    <td>if condition:</td>
+</tr>
+<tr>
+    <td>While Loop</td>
+    <td>while ($condition) { }</td>
+    <td>while condition do end</td>
+    <td>while condition:</td>
+</tr>
+<tr>
+    <td>Function Definition</td>
+    <td>function name() { }</td>
+    <td>def name() end</td>
+    <td>def name():</td>
+</tr>
+<tr>
+    <td>Command Line Arguments</td>
+    <td>$argv</td>
+    <td>ARGV</td>
+    <td>sys.argv</td>
+</tr>
+<tr>
+    <td>Tuples</td>
+    <td>N/A</td>
+    <td>[immutable]</td>
+    <td>(item1, item2)</td>
+</tr>
+<tr>
+    <td>Sets</td>
+    <td>[PHP 5.6+] new \Ds\Set()</td>
+    <td>Set.new</td>
+    <td>set([item1, item2])</td>
+</tr>
+<tr>
+    <td>Intersections</td>
+    <td>$set1->intersect($set2)</td>
+    <td>set1 & set2</td>
+    <td>set1.intersection(set2)</td>
+</tr>
+<tr>
+    <td>Dictionaries/Associative Arrays</td>
+    <td>$array[key] = value</td>
+    <td>hash = { key => value }</td>
+    <td>dict = { key: value }</td>
+</tr>
+
+<tr>
+    <td>Class Definition</td>
+    <td>class MyClass { }</td>
+    <td>class MyClass; end</td>
+    <td>class MyClass: pass</td>
+</tr>
+<tr>
+    <td>Object Instantiation</td>
+    <td>$obj = new MyClass();</td>
+    <td>obj = MyClass.new</td>
+    <td>obj = MyClass()</td>
+</tr>
+<tr>
+    <td>File Reading</td>
+    <td>$file = file_get_contents('filename');</td>
+    <td>File.read('filename')</td>
+    <td>with open('filename') as file:</td>
+</tr>
+<tr>
+    <td>File Writing</td>
+    <td>file_put_contents('filename', $data);</td>
+    <td>File.write('filename', data)</td>
+    <td>with open('filename', 'w') as file:</td>
+</tr>
+<tr>
+    <td>Error Handling</td>
+    <td>try { } catch (Exception $e) { }</td>
+    <td>begin rescue Exception => e end</td>
+    <td>try: except Exception as e:</td>
+</tr>
+<tr>
+    <td>Regular Expressions</td>
+    <td>preg_match('/pattern/', $string)</td>
+    <td>string.match(/pattern/)</td>
+    <td>re.search('pattern', string)</td>
+</tr>
+<tr>
+    <td>Array Length/Size</td>
+    <td>count($array)</td>
+    <td>array.length</td>
+    <td>len(array)</td>
+</tr>
+<tr>
+    <td>String Concatenation</td>
+    <td>$str1 . $str2</td>
+    <td>str1 + str2</td>
+    <td>str1 + str2</td>
+</tr>
+<tr>
+    <td>Type Conversion</td>
+    <td>(int)$var; (string)$var;</td>
+    <td>var.to_i; var.to_s;</td>
+    <td>int(var); str(var);</td>
+</tr>
+<tr>
+    <td>Mathematical Operations</td>
+    <td>$a + $b; $a * $b;</td>
+    <td>a + b; a * b;</td>
+    <td>a + b; a * b;</td>
+</tr>
+<tr>
+    <td>Date and Time Functions</td>
+    <td>date('Y-m-d H:i:s')</td>
+    <td>Time.now</td>
+    <td>datetime.datetime.now()</td>
+</tr>
+<tr>
+    <td>Accessing Web Data (HTTP requests)</td>
+    <td>file_get_contents('http://example.com')</td>
+    <td>require 'open-uri'; open('http://example.com')</td>
+    <td>import requests; requests.get('http://example.com')</td>
+</tr>
+<tr>
+    <td>JSON Parsing</td>
+    <td>json_decode($jsonString)</td>
+    <td>require 'json'; JSON.parse(json_string)</td>
+    <td>import json; json.loads(json_string)</td>
+</tr>
+<tr>
+    <td>Environment Variables</td>
+    <td>$_ENV['VAR_NAME']</td>
+    <td>ENV['VAR_NAME']</td>
+    <td>os.environ['VAR_NAME']</td>
+</tr>
+<tr>
+    <td>Multi-threading</td>
+    <td>Not natively supported</td>
+    <td>require 'thread'; Thread.new { }</td>
+    <td>import threading; threading.Thread(target=function_name)</td>
+</tr>
+<tr>
+    <td>Database Connection</td>
+    <td>new mysqli('localhost', 'user', 'pass', 'db')</td>
+    <td>require 'sqlite3'; SQLite3::Database.new('db')</td>
+    <td>import sqlite3; sqlite3.connect('db')</td>
+</tr>
+<tr>
+    <td>API Creation</td>
+    <td>Use frameworks like Laravel or Symfony</td>
+    <td>Use frameworks like Ruby on Rails or Sinatra</td>
+    <td>Use frameworks like Flask or Django</td>
+</tr>
+
+<tr>
+    <td>Cloud Instance Retrieval Function</td>
+    <td>
+        PHP Function: <br>
+        <pre>
+        public function getAllInstances($prefix, $enforcePrefix = true): ?array {
+            $cmd = "gcloud compute instances list --filter='status=RUNNING AND name~.*$prefix.*' | awk '{print $1}' | grep -v NAME";
+            $group_sets = $this->runCommand($cmd);
+            $set = array();
+            foreach ($group_sets as $group_set) {
+                if ($enforcePrefix && strpos($group_set, 'replica') === false) {
+                    continue;
+                }
+                if (trim($group_set) != '') {
+                    $set[] = $group_set;
+                }
+            }
+            return $set;
+        }
+        </pre>
+    </td>
+    <td>
+        Ruby Equivalent: <br>
+        <pre>
+        def get_all_instances(prefix, enforce_prefix = true)
+            cmd = "gcloud compute instances list --filter='status=RUNNING AND name~.*#{prefix}.*' | awk '{print $1}' | grep -v NAME"
+            group_sets = `#{cmd}`.split("\n")
+            set = []
+            group_sets.each do |group_set|
+                next if enforce_prefix && !group_set.include?('replica')
+                set << group_set unless group_set.strip.empty?
+            end
+            set
+        end
+        </pre>
+    </td>
+    <td>
+        Python Equivalent: <br>
+        <pre>
+        import subprocess
+
+        def get_all_instances(prefix, enforce_prefix=True):
+            cmd = "gcloud compute instances list --filter='status=RUNNING AND name~.*{}.*' | awk '{{print $1}}' | grep -v NAME".format(prefix)
+            group_sets = subprocess.check_output(cmd, shell=True).decode().split('\n')
+            set = []
+            for group_set in group_sets:
+                if enforce_prefix and 'replica' not in group_set:
+                    continue
+                if group_set.strip():
+                    set.append(group_set)
+            return set
+        </pre>
+    </td>
+</tr>
+<td>Database Operations</td>
+    <td>
+        PHP Example: <br>
+        <pre>
+        $mysqli = new mysqli("localhost", "username", "password", "database");
+        if ($mysqli->connect_error) {
+            die("Connection failed: " . $mysqli->connect_error);
+        }
+        $result = $mysqli->query("SELECT * FROM table LIMIT 1");
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
+            }
+        } else {
+            echo "0 results";
+        }
+        $mysqli->close();
+        </pre>
+    </td>
+    <td>
+        Ruby Equivalent: <br>
+        <pre>
+        require 'sqlite3'
+        db = SQLite3::Database.new 'test.db'
+        db.results_as_hash = true
+        db.execute('SELECT * FROM table LIMIT 1') do |row|
+            puts "id: #{row['id']} - Name: #{row['name']}"
+        end
+        db.close
+        </pre>
+    </td>
+    <td>
+        Python Equivalent: <br>
+        <pre>
+        import sqlite3
+        conn = sqlite3.connect('test.db')
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM table LIMIT 1")
+        row = cursor.fetchone()
+        if row:
+            print(f"id: {row[0]} - Name: {row[1]}")
+        else:
+            print("0 results")
+        conn.close()
+        </pre>
+    </td>
+</tr>
+<tr>
+    <td>Define DB Model "Account"</td>
+    <td>
+        PHP (Doctrine ORM):<br>
+        <pre>
+        use Doctrine\ORM\Mapping as ORM;
+
+        /**
+         * @ORM\Entity
+         * @ORM\Table(name="account")
+         */
+        class Account
+        {
+            /**
+             * @ORM\Id
+             * @ORM\GeneratedValue
+             * @ORM\Column(type="integer")
+             */
+            private $id;
+
+            /**
+             * @ORM\Column(type="string")
+             */
+            private $name;
+
+            /**
+             * @ORM\Column(type="string")
+             */
+            private $email;
+
+            // Getters and setters...
+        }
+        </pre>
+    </td>
+    <td>
+        Ruby (Rails ActiveRecord):<br>
+        <pre>
+        class Account < ApplicationRecord
+            # id is created automatically
+            validates :name, presence: true
+            validates :email, presence: true, uniqueness: true
+        end
+        </pre>
+        <small>Rails uses migrations to define database schema.</small>
+    </td>
+    <td>
+        Python (Django ORM):<br>
+        <pre>
+        from django.db import models
+
+        class Account(models.Model):
+            name = models.CharField(max_length=100)
+            email = models.EmailField(unique=True)
+
+            def __str__(self):
+                return self.name
+        </pre>
+    </td>
+</tr>
+<tr>
+    <td>Setting Up DB Models "Account"</td>
+    <td>
+        PHP (Doctrine ORM):<br>
+        <pre>
+        // 1. Configure database in 'config.yml':
+        // (Example configuration)
+        doctrine:
+            dbal:
+                driver: 'pdo_mysql'
+                host: '%database_host%'
+                port: '%database_port%'
+                dbname: '%database_name%'
+                user: '%database_user%'
+                password: '%database_password%'
+                charset: UTF8
+
+        // 2. Create the entity class (as shown in the previous row).
+
+        // 3. Generate database tables via Doctrine's command-line tools:
+        // ./vendor/bin/doctrine orm:schema-tool:update --force --dump-sql
+        </pre>
+    </td>
+    <td>
+        Ruby (Rails ActiveRecord):<br>
+        <pre>
+        // 1. Configure database in 'config/database.yml':
+        // (Example configuration)
+        development:
+            adapter: sqlite3
+            database: db/development.sqlite3
+
+        // 2. Create the model file (as shown in the previous row).
+
+        // 3. Generate a migration file and migrate the database:
+        // rails generate migration CreateAccounts name:string email:string
+        // rails db:migrate
+        </pre>
+        <small>Note: Rails automatically handles 'id'.</small>
+    </td>
+    <td>
+        Python (Django ORM):<br>
+        <pre>
+        // 1. Configure database in 'settings.py':
+        // (Example configuration)
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+
+        // 2. Create the model (as shown in the previous row).
+
+        // 3. Generate and apply migrations:
+        // python manage.py makemigrations
+        // python manage.py migrate
+        </pre>
+    </td>
+</tr>
+<tr>
+    <td>Removing Element in Dictionary</td>
+    <td>
+        PHP:<br>
+        <pre>
+        function removeElement(&$dict, $key) {
+            unset($dict[$key]);
+        }
+        </pre>
+    </td>
+    <td>
+        Ruby:<br>
+        <pre>
+        def remove_element(dict, key)
+            dict.delete(key)
+        end
+        </pre>
+    </td>
+    <td>
+        Python:<br>
+        <pre>
+        def remove_element(dict, key):
+            del dict[key]
+        </pre>
+    </td>
+</tr>
+<tr>
+    <td>Sorting an Array</td>
+    <td>
+        PHP:<br>
+        <pre>
+        function sortArray($array) {
+            sort($array);
+            return $array;
+        }
+        </pre>
+    </td>
+    <td>
+        Ruby:<br>
+        <pre>
+        def sort_array(array)
+            array.sort
+        end
+        </pre>
+    </td>
+    <td>
+        Python:<br>
+        <pre>
+        def sort_array(array):
+            return sorted(array)
+        </pre>
+    </td>
+</tr>
+<tr>
+    <td>Simple Word Manipulation (Reverse String)</td>
+    <td>
+        PHP:<br>
+        <pre>
+        function reverseString($string) {
+            return strrev($string);
+        }
+        </pre>
+    </td>
+    <td>
+        Ruby:<br>
+        <pre>
+        def reverse_string(string)
+            string.reverse
+        end
+        </pre>
+    </td>
+    <td>
+        Python:<br>
+        <pre>
+        def reverse_string(string):
+            return string[::-1]
+        </pre>
+    </td>
+</tr>
+<tr>
+    <td>Dictionary Operations</td>
+    <td>
+        PHP:<br>
+        <pre>
+        function manipulateDictionary() {
+            $dict = ["key1" => "value1", "key2" => "value2"];
+            $dict["key3"] = "value3"; // Add
+            unset($dict["key1"]); // Remove
+            foreach ($dict as $key => $value) { // Iterate
+                echo "$key: $value\n";
+            }
+            return $dict["key2"]; // Access
+        }
+        </pre>
+    </td>
+    <td>
+        Ruby:<br>
+        <pre>
+        def manipulate_dictionary
+            dict = {"key1" => "value1", "key2" => "value2"}
+            dict["key3"] = "value3" # Add
+            dict.delete("key1") # Remove
+            dict.each { |key, value| puts "#{key}: #{value}" } # Iterate
+            dict["key2"] # Access
+        end
+        </pre>
+    </td>
+    <td>
+        Python:<br>
+        <pre>
+        def manipulate_dictionary():
+            dict = {"key1": "value1", "key2": "value2"}
+            dict["key3"] = "value3" # Add
+            del dict["key1"] # Remove
+            for key, value in dict.items(): # Iterate
+                print(f"{key}: {value}")
+            return dict["key2"] # Access
+        </pre>
+    </td>
+</tr>
+
+</html>
+[/Users/ransom/projects/guides][git:main]$ 
