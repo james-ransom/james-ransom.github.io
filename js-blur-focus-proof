@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Listener Demo</title>
+</head>
+<body>
+  <h1>Event Listener Demo</h1>
+  <p>Open the browser console to see the event logs.</p>
+
+  <p id="beforeunload-status">Beforeunload not triggered yet.</p>
+
+  <script>
+    // Detect when the browser window is closed (simulated)
+    window.addEventListener('beforeunload', function (event) {
+      console.info('beforeunload event triggered: Browser window is about to be closed.');
+      // Simulate setting a cookie or session variable
+      document.getElementById('beforeunload-status').textContent = 'Beforeunload triggered! (Simulated)';
+    }, false);
+
+    // Detect when the window loses focus (e.g., user changes to another window or new tab)
+    window.addEventListener("blur", function (event) {
+      console.info('blur event triggered: Window lost focus.');
+    }, false);
+
+    // Detect when the window gains focus
+    window.addEventListener("focus", function (event) {
+      console.info('focus event triggered: Window gained focus.');
+    }, false);
+  </script>
+</body>
+</html>
+
